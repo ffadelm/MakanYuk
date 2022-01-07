@@ -29,7 +29,7 @@
             <router-link class="nav-link" to="/keranjang">
               Keranjang
               <b-icon-cart></b-icon-cart>
-              <span class="badge badge-success ml-2">{{cart.length}}</span>
+              <span class="badge badge-success ml-2">{{updateKeranjang ? updateKeranjang.length : cart.length}}</span>
             </router-link>
           </li>
         </ul>
@@ -48,6 +48,7 @@ export default {
       cart: [],
     };
   },
+  props:['updateKeranjang'],
   methods: {
     setJumlah(data) {
       this.cart = data;

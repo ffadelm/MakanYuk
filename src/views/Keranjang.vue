@@ -1,6 +1,6 @@
 <template>
   <div class="keranjang">
-    <Navbar />
+    <Navbar :updateKeranjang="keranjangs" />
     <div class="container">
       <!-- breadcrumb -->
       <div class="row mt-5">
@@ -41,11 +41,45 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                <tr
+                  v-for="(keranjang, index) in keranjangs"
+                  :key="keranjang.id"
+                >
+                  <th>{{ index + 1 }}</th>
+                  <td>
+                    <img
+                      :src="'../assets/images/' + keranjang.products.gambar"
+                      alt=""
+                      class="img-fluid shadow"
+                      width="250"
+                    />
+                  </td>
+                  <td>{{ keranjang.products.nama }}</td>
+                  <td>{{ keranjang.catatan ? keranjang.catatan : "-" }}</td>
+                  <td>{{ keranjang.jumlah_pemesanan }}</td>
+                  <td align="right">Rp {{ keranjang.products.harga }}</td>
+                  <td align="right">
+                    <strong
+                      >Rp
+                      {{
+                        keranjang.products.harga * keranjang.jumlah_pemesanan
+                      }}</strong
+                    >
+                  </td>
+                  <td align="center" class="text-danger">
+                    <b-icon-trash
+                      @click="hapusKeranjang(keranjang.id)"
+                    ></b-icon-trash>
+                  </td>
+                </tr>
+                <tr class="text-success">
+                  <td colspan="6" align="right">
+                    <strong>Total Tagihan: </strong>
+                  </td>
+                  <td align="right">
+                    <strong>Rp {{ totalHarga }}</strong>
+                  </td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -57,11 +91,53 @@
 </template>
 
 <script>
+import axios from "axios";
 import Navbar from "../components/Navbar.vue";
 export default {
   name: "Keranjang",
   components: {
     Navbar,
+  },
+  data() {
+    return {
+      keranjangs: [],
+    };
+  },
+  methods: {
+    setKeranjangs(data) {
+      this.keranjangs = data;
+    },
+    hapusKeranjang(id) {
+      axios
+        .delete("http://localhost:3000/keranjangs/" + id)
+        .then(() => {
+          alert("Hapus keranjang berhasil");
+
+          // Update Data keranjang
+          axios
+            .get("http://localhost:3000/keranjangs")
+            .then((response) => this.setKeranjangs(response.data))
+            .catch((error) => console.log(error));
+        })
+        .catch((error) => console.log(error));
+    },
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/keranjangs")
+      .then((response) => {
+        this.setKeranjangs(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+  computed: {
+    totalHarga() {
+      return this.keranjangs.reduce(function (item, data) {
+        return item + data.products.harga * data.jumlah_pemesanan;
+      }, 0);
+    },
   },
 };
 </script>
