@@ -13,6 +13,9 @@ Order Some Foods
 Success Order
 ![image](https://user-images.githubusercontent.com/67732382/148687096-53aa679e-d3f9-4b2c-b583-37909d138f4b.png)
 
+Example for Mobile Version
+![image](https://user-images.githubusercontent.com/67732382/148687179-d1ac0bb5-ee94-4609-ad82-1af2b268a4b9.png)
+
 
 ## Project setup
 ```
