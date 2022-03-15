@@ -1,5 +1,8 @@
 # makanyuk
 
+## live demo
+https://makanyuks.netlify.app/
+
 ## Preview
 Home
 ![image](https://user-images.githubusercontent.com/67732382/148686959-42846745-c6e6-4a19-a69c-6a6640670cb2.png)
