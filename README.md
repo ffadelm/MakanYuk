@@ -37,5 +37,8 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### api from
+https://apimakanan.herokuapp.com/
+
 ### how to install & running jsonPlaceholder
 https://github.com/typicode/json-server
