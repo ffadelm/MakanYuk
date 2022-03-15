@@ -134,12 +134,12 @@ export default {
     },
     hapusKeranjang(id) {
       axios
-        .delete("http://localhost:3000/keranjangs/" + id)
+        .delete("https://apimakanan.herokuapp.com/keranjangs/" + id)
         .then(() => {
           alert("Hapus keranjang berhasil");
           // Update Data keranjang
           axios
-            .get("http://localhost:3000/keranjangs")
+            .get("https://apimakanan.herokuapp.com/keranjangs")
             .then((response) => this.setKeranjangs(response.data))
             .catch((error) => console.log(error));
         })
@@ -149,12 +149,14 @@ export default {
       if (this.pesan.nama && this.pesan.noMeja) {
         this.pesan.keranjangs = this.keranjangs;
         axios
-          .post("http://localhost:3000/pesanans", this.pesan)
+          .post("https://apimakanan.herokuapp.com/pesanans", this.pesan)
           .then(() => {
             // Hapus Semua Keranjang
             this.keranjangs.map(function (item) {
               return axios
-                .delete("http://localhost:3000/keranjangs/" + item.id)
+                .delete(
+                  "https://apimakanan.herokuapp.com/keranjangs/" + item.id
+                )
                 .catch((error) => console.log(error));
             });
             this.$router.push({ path: "/pesanan-sukses" });
@@ -168,7 +170,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/keranjangs")
+      .get("https://apimakanan.herokuapp.com/keranjangs")
       .then((response) => {
         this.setKeranjangs(response.data);
       })

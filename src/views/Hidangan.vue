@@ -21,7 +21,8 @@
               @keyup="searchFood"
             />
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"><b-icon-search></b-icon-search
+              <span class="input-group-text" id="basic-addon1"
+                ><b-icon-search></b-icon-search
               ></span>
             </div>
           </div>
@@ -56,7 +57,7 @@ export default {
   data() {
     return {
       products: [],
-      search:'',
+      search: "",
     };
   },
   methods: {
@@ -64,16 +65,16 @@ export default {
       this.products = data;
     },
 
-    searchFood(){
+    searchFood() {
       axios
-      .get("http://localhost:3000/products?q=" + this.search)
-      .then((response) => this.setProducts(response.data))
-      .catch((error) => console.log(error));
+        .get("https://apimakanan.herokuapp.com/products?q=" + this.search)
+        .then((response) => this.setProducts(response.data))
+        .catch((error) => console.log(error));
     },
   },
   mounted() {
     axios
-      .get("http://localhost:3000/products")
+      .get("https://apimakanan.herokuapp.com/products")
       .then((response) => this.setProducts(response.data))
       .catch((error) => console.log(error));
   },
