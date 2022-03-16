@@ -1,21 +1,5 @@
-# makanyuk
-
 ## live demo
 https://makanyuks.netlify.app/
-
-## Preview
-Home
-![image](https://user-images.githubusercontent.com/67732382/148686959-42846745-c6e6-4a19-a69c-6a6640670cb2.png)
-
-List Foods
-![image](https://user-images.githubusercontent.com/67732382/148686978-37d4a931-23c6-4293-846a-019da02e3a32.png)
-
-Order Some Foods
-![image](https://user-images.githubusercontent.com/67732382/148687047-e5080b7c-979e-4183-9f9b-2b9b4353f4a5.png)
-
-Success Order
-![image](https://user-images.githubusercontent.com/67732382/148687096-53aa679e-d3f9-4b2c-b583-37909d138f4b.png)
-
 
 ## Project setup
 ```
@@ -45,3 +29,24 @@ https://apimakanan.herokuapp.com/
 
 ### how to install & running jsonPlaceholder
 https://github.com/typicode/json-server
+
+# LICENSE
+Copyright (c) {{ 2022 }} {{ faysal fadel maulana }}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE.
