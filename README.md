@@ -29,3 +29,8 @@ https://apimakanan.herokuapp.com/
 
 ### how to install & running jsonPlaceholder
 https://github.com/typicode/json-server
+
+# LICENSE
+MIT License
+
+Copyright (c) 2022 Faysal Fadel Maulana
