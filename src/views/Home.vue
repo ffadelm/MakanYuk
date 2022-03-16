@@ -5,7 +5,7 @@
       <Hero />
       <div class="row mt-4">
         <div class="col">
-          <h2>Menu <strong>Hidangan</strong></h2>
+          <h3>Menu <strong>Hidangan</strong></h3>
         </div>
         <div class="col">
           <router-link to="/hidangan" class="btn btn-success float-right"
